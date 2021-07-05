@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mca.client.manager.dao.UserInfoDAO">
+
+   <select id="getUserInfoAllById" resultType="com.mca.client.manager.entity.UserInfoAll">
+       SELECT
+           id,
+           user_name,
+           user_authorities,
+           user_nick,
+           user_img,
+           user_text
+       FROM
+           simple_user
+       WHERE
+           status = 0
+         AND
+           id = #{id}
+   </select>
+
+    <update id="updateUserInfoText" parameterType="com.mca.client.manager.entity.UserInfo">
+        UPDATE
+            simple_user
+        SET
+            user_text = #{userText},
+            gmt_modified = now()
+        WHERE
+            id = #{id}
+    </update>
+
+</mapper>

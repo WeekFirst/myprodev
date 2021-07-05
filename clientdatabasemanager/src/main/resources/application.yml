@@ -11,6 +11,7 @@ spring:
     url: jdbc:mysql://localhost:3306/db_blog?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: rootadmin
+#    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: client-manager
